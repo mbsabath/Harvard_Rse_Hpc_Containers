@@ -9,6 +9,6 @@
 #SBATCH --partition=shared
 #SBATCH -c 1
 
-module load openmpi/4.1.5-fasrc03
+module load gcc/13.2.0-fasrc01 openmpi/4.1.5-fasrc03
 
 srun -n $SLURM_NTASKS --mpi=pmix singularity run mpi_example.sif
