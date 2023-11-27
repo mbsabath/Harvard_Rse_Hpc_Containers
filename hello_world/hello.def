@@ -1,0 +1,7 @@
+Bootstrap: docker
+From: ubuntu:20.04
+
+
+%runscript
+    echo "Container hello world from $USER, running in $PWD"
+

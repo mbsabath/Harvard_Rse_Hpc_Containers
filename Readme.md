@@ -11,8 +11,12 @@ You can use Vagrant, although I had issues with VirtualBox due to having an M1 m
 ```
 brew install qemu lima
 limactl start template://apptainer
-limactl shell apptainer
 ```
+
+There are some configuration changes you'll need to make to lima so that it can successfully build singularity containers. 
+
+
+
 
 ### Good video for getting an intuition for containers:
 
