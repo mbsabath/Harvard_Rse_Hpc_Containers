@@ -2,7 +2,7 @@
 
 ## Installing Singularity on Mac and Windows
 
-Containers rely on features of linux, therefore in order to build containers for this course (assuming you don't have a personal linux machine) you'll need to install a linux virtual machine or wsl like system on your computer.
+Containers rely on features of linux, therefore in order to build containers for this course (assuming you don't have a personal linux machine) you'll need to install a linux virtual machine or wsl like system on your computer. We'll be doing all building and running of containers on the cannon cluster but I mention Lima here in case you want to build containers on your own machine. Note that with M1+ macs containers built on your machine will not run on the cannon cluster due to the different chip architectures. 
 
 ### Mac
 
@@ -13,7 +13,15 @@ brew install qemu lima
 limactl start template://apptainer
 ```
 
-There are some configuration changes you'll need to make to lima so that it can successfully build singularity containers. 
+There are some configuration changes you'll need to make to lima so that it can successfully build singularity containers. You'll want to add your home directory to the mounts as a writeable directory:
+
+```
+mounts:
+  - location: "~"
+    writable: true
+  - location: "/tmp/lima"
+    writable: true
+```
 
 
 

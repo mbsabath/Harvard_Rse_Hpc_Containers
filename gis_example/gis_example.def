@@ -1,0 +1,14 @@
+Bootstrap: docker
+From: continuumio/miniconda3:23.10.0-1
+
+%files
+    gis_example.py /gis_example.py
+
+%post
+    conda install -y -c conda-forge geopandas geodatasets geoplot
+
+%runscript
+    python /gis_example.py
+
+
+
